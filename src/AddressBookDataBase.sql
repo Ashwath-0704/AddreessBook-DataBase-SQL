@@ -132,3 +132,16 @@ mysql> SELECT COUNT(city) FROM Address_Book
 +-------------+
 1 row in set (0.00 sec)
 
+
+// UC8 :- Ability to retrieve entries sorted alphabetically by Person’s name for a given city
+
+mysql> SELECT firstName, lastName,city FROM Address_Book
+    -> ORDER BY firstName;
++-----------+----------+-----------+
+| firstName | lastName | city      |
++-----------+----------+-----------+
+| Ashwath   | Naidu    | Bellery   |
+| Gouthum   | G        | Kurnool   |
+| Krishna   | Kumar    | Bengaluru |
++-----------+----------+-----------+
+3 rows in set (0.00 sec)
