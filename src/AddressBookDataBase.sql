@@ -145,3 +145,27 @@ mysql> SELECT firstName, lastName,city FROM Address_Book
 | Krishna   | Kumar    | Bengaluru |
 +-----------+----------+-----------+
 3 rows in set (0.00 sec)
+
+// UC9 :- Ability to identify each Address Book with name and Type.
+
+mysql> UPDATE Address_Book SET Department_Type = "Sales Team" WHERE firstName = "Ashwath";
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE Address_Book SET Department_Type = "Marketting Team" WHERE firstName = "Krishna";
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE Address_Book SET Department_Type = "Sales Team" WHERE firstName = "Gouthum";
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM Address_Book;
++-----------+----------+-----------------+------------------------------------------------------------+-----------+-----------+--------+-------------+--------------------+
+| firstName | lastName | Department_Type | address                                                    | city      | state     | zip    | phoneNumber | email              |
++-----------+----------+-----------------+------------------------------------------------------------+-----------+-----------+--------+-------------+--------------------+
+| Ashwath   | Naidu    | Sales Team      | Near sai baba temple road,more super market,kundhalli gate | Bellery   | Karnataka | 560037 |   900862587 | Ashwath@gmail.com  |
+| Krishna   | Kumar    | Marketting Team | near st.Jhons school,KR purma                              | Bengaluru | Karnataka | 560003 |    85274196 | XYZ@gmail.com      |
+| Gouthum   | G        | Sales Team      | near shounush nagar,4th cross.                             | Kurnool   | AP        | 401585 |    96374173 | Happy123@gmail.com |
++-----------+----------+-----------------+------------------------------------------------------------+-----------+-----------+--------+-------------+--------------------+
+3 rows in set (0.00 sec)
