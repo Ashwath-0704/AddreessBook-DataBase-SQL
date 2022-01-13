@@ -100,3 +100,15 @@ mysql> SELECT * FROM Address_Book;
 | Gouthum   | G        | near shounush nagar,4th cross.                             | Kurnool   | AP        | 401585 |    96374173 | Happy123@gmail.com |
 +-----------+----------+------------------------------------------------------------+-----------+-----------+--------+-------------+--------------------+
 3 rows in set (0.00 sec)
+
+//UC6 :- Ability to Retrieve Person belonging to a City or State from the Address Book
+
+mysql> select * from Address_Book where state = 'Karnataka';
++-----------+----------+------------------------------------------------------------+-----------+-----------+--------+-------------+-------------------+
+| firstName | lastName | address                                                    | city      | state     | zip    | phoneNumber | email             |
++-----------+----------+------------------------------------------------------------+-----------+-----------+--------+-------------+-------------------+
+| Ashwath   | Naidu    | Near sai baba temple road,more super market,kundhalli gate | Bellery   | Karnataka | 560037 |   900862587 | Ashwath@gmail.com |
+| Krishna   | Kumar    | near st.Jhons school,KR purma                              | Bengaluru | Karnataka | 560003 |    85274196 | XYZ@gmail.com     |
++-----------+----------+------------------------------------------------------------+-----------+-----------+--------+-------------+-------------------+
+2 rows in set (0.00 sec)
+
