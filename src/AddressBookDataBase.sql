@@ -43,3 +43,28 @@ mysql> DESC Address_Book;
 +-------------+--------------+------+-----+---------+-------+
 8 rows in set (0.01 sec)
 
+
+// UC3 :- Ability to insert new Contacts to Address Book
+
+mysql> INSERT INTO Address_Book values("Ashwath","Naidu","Near sai baba temple road,more super market,kundhalli gate","Bengaluru","Karnataka",560037,900862587,"Ashwath@gmail.com");
+Query OK, 1 row affected (0.02 sec)
+
+mysql> INSERT INTO Address_Book values("Krishna","Kumar","near st.Jhons school,KR purma","Bengaluru","Karnataka",560003,85274196,"XYZ@gmail.com");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO Address_Book values("Gouthum","G","near shounush nagar,4th cross.","Kurnool","AP",401585,96374173,"Happy123@gmail.com");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO Address_Book values("Deepthi","Reddy","vipin khand,Gomti Nagar,Lucknow","Lucknow","Uttar Pradesh",520154,956321741,"Sad123@gmail.com");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT * FROM Address_Book;
++-----------+----------+------------------------------------------------------------+-----------+---------------+--------+-------------+--------------------+
+| firstName | lastName | address                                                    | city      | state         | zip    | phoneNumber | email              |
++-----------+----------+------------------------------------------------------------+-----------+---------------+--------+-------------+--------------------+
+| Ashwath   | Naidu    | Near sai baba temple road,more super market,kundhalli gate | Bengaluru | Karnataka     | 560037 |   900862587 | Ashwath@gmail.com  |
+| Krishna   | Kumar    | near st.Jhons school,KR purma                              | Bengaluru | Karnataka     | 560003 |    85274196 | XYZ@gmail.com      |
+| Gouthum   | G        | near shounush nagar,4th cross.                             | Kurnool   | AP            | 401585 |    96374173 | Happy123@gmail.com |
+| Deepthi   | Reddy    | vipin khand,Gomti Nagar,Lucknow                            | Lucknow   | Uttar Pradesh | 520154 |   956321741 | Sad123@gmail.com   |
++-----------+----------+------------------------------------------------------------+-----------+---------------+--------+-------------+--------------------+
+4 rows in set (0.00 sec)
