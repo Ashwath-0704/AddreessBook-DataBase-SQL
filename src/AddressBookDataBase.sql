@@ -68,3 +68,20 @@ mysql> SELECT * FROM Address_Book;
 | Deepthi   | Reddy    | vipin khand,Gomti Nagar,Lucknow                            | Lucknow   | Uttar Pradesh | 520154 |   956321741 | Sad123@gmail.com   |
 +-----------+----------+------------------------------------------------------------+-----------+---------------+--------+-------------+--------------------+
 4 rows in set (0.00 sec)
+
+// UC4 :- Ability to edit existing contact person using their name
+
+mysql> UPDATE Address_Book SET city = 'Bellery' WHERE firstName = 'Ashwath';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM Address_Book;
++-----------+----------+------------------------------------------------------------+-----------+---------------+--------+-------------+--------------------+
+| firstName | lastName | address                                                    | city      | state         | zip    | phoneNumber | email              |
++-----------+----------+------------------------------------------------------------+-----------+---------------+--------+-------------+--------------------+
+| Ashwath   | Naidu    | Near sai baba temple road,more super market,kundhalli gate | Bellery   | Karnataka     | 560037 |   900862587 | Ashwath@gmail.com  |
+| Krishna   | Kumar    | near st.Jhons school,KR purma                              | Bengaluru | Karnataka     | 560003 |    85274196 | XYZ@gmail.com      |
+| Gouthum   | G        | near shounush nagar,4th cross.                             | Kurnool   | AP            | 401585 |    96374173 | Happy123@gmail.com |
+| Deepthi   | Reddy    | vipin khand,Gomti Nagar,Lucknow                            | Lucknow   | Uttar Pradesh | 520154 |   956321741 | Sad123@gmail.com   |
++-----------+----------+------------------------------------------------------------+-----------+---------------+--------+-------------+--------------------+
+4 rows in set (0.00 sec)
