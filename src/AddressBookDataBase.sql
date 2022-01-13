@@ -187,3 +187,23 @@ mysql> SELECT COUNT(firstName) FROM Address_Book WHERE Department_Type = "Market
 |                1 |
 +------------------+
 1 row in set (0.00 sec)
+
+//UC11 :- Ability to add person to both Friend and Family
+
+mysql> INSERT INTO Address_Book values("Anusha","Mohan","Marketting Team","kurnool near durga tmeple","Kurnool","AP",401562,7418503,"Anusha.123@gmail.com");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> INSERT INTO Address_Book values("Anusha","Mohan","Sales Team","kurnool near durga tmeple","Kurnool","AP",401562,7418503,"Anusha.123@gmail.com");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT * FROM Address_Book;
++-----------+----------+-----------------+------------------------------------------------------------+-----------+-----------+--------+-------------+----------------------+
+| firstName | lastName | Department_Type | address                                                    | city      | state     | zip    | phoneNumber | email                |
++-----------+----------+-----------------+------------------------------------------------------------+-----------+-----------+--------+-------------+----------------------+
+| Ashwath   | Naidu    | Sales Team      | Near sai baba temple road,more super market,kundhalli gate | Bellery   | Karnataka | 560037 |   900862587 | Ashwath@gmail.com    |
+| Krishna   | Kumar    | Marketting Team | near st.Jhons school,KR purma                              | Bengaluru | Karnataka | 560003 |    85274196 | XYZ@gmail.com        |
+| Gouthum   | G        | Sales Team      | near shounush nagar,4th cross.                             | Kurnool   | AP        | 401585 |    96374173 | Happy123@gmail.com   |
+| Anusha    | Mohan    | Marketting Team | kurnool near durga tmeple                                  | Kurnool   | AP        | 401562 |     7418503 | Anusha.123@gmail.com |
+| Anusha    | Mohan    | Sales Team      | kurnool near durga tmeple                                  | Kurnool   | AP        | 401562 |     7418503 | Anusha.123@gmail.com |
++-----------+----------+-----------------+------------------------------------------------------------+-----------+-----------+--------+-------------+----------------------+
+5 rows in set (0.00 sec)
