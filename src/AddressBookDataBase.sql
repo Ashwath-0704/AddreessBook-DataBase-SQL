@@ -85,3 +85,18 @@ mysql> SELECT * FROM Address_Book;
 | Deepthi   | Reddy    | vipin khand,Gomti Nagar,Lucknow                            | Lucknow   | Uttar Pradesh | 520154 |   956321741 | Sad123@gmail.com   |
 +-----------+----------+------------------------------------------------------------+-----------+---------------+--------+-------------+--------------------+
 4 rows in set (0.00 sec)
+
+// UC5 :- Ability to delete a person using person's name
+
+mysql> DELETE FROM Address_Book WHERE firstName = "Deepthi";
+Query OK, 1 row affected (0.01 sec)
+
+mysql> SELECT * FROM Address_Book;
++-----------+----------+------------------------------------------------------------+-----------+-----------+--------+-------------+--------------------+
+| firstName | lastName | address                                                    | city      | state     | zip    | phoneNumber | email              |
++-----------+----------+------------------------------------------------------------+-----------+-----------+--------+-------------+--------------------+
+| Ashwath   | Naidu    | Near sai baba temple road,more super market,kundhalli gate | Bellery   | Karnataka | 560037 |   900862587 | Ashwath@gmail.com  |
+| Krishna   | Kumar    | near st.Jhons school,KR purma                              | Bengaluru | Karnataka | 560003 |    85274196 | XYZ@gmail.com      |
+| Gouthum   | G        | near shounush nagar,4th cross.                             | Kurnool   | AP        | 401585 |    96374173 | Happy123@gmail.com |
++-----------+----------+------------------------------------------------------------+-----------+-----------+--------+-------------+--------------------+
+3 rows in set (0.00 sec)
