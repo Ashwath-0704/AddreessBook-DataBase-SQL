@@ -169,3 +169,21 @@ mysql> SELECT * FROM Address_Book;
 | Gouthum   | G        | Sales Team      | near shounush nagar,4th cross.                             | Kurnool   | AP        | 401585 |    96374173 | Happy123@gmail.com |
 +-----------+----------+-----------------+------------------------------------------------------------+-----------+-----------+--------+-------------+--------------------+
 3 rows in set (0.00 sec)
+
+//UC10 :- Ability to get number of contact persons i.e. count by type
+
+mysql> SELECT COUNT(firstName) FROM Address_Book WHERE Department_Type = "Sales Team";
++------------------+
+| COUNT(firstName) |
++------------------+
+|                2 |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COUNT(firstName) FROM Address_Book WHERE Department_Type = "Marketting Team";
++------------------+
+| COUNT(firstName) |
++------------------+
+|                1 |
++------------------+
+1 row in set (0.00 sec)
