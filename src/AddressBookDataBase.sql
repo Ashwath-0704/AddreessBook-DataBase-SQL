@@ -259,3 +259,59 @@ mysql> SELECT * FROM Person_Department;
 |             4 |         2 | Relative        |
 +---------------+-----------+-----------------+
 4 rows in set (0.00 sec)
+
+
+mysql> SELECT Person_ID,city,State FROM Person_Address WHERE Person_ID = 1;
++-----------+-----------+-----------+
+| Person_ID | city      | State     |
++-----------+-----------+-----------+
+|         1 | Bengaluru | Karnataka |
+|         1 | Bengaluru | Karnataka |
++-----------+-----------+-----------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT COUNT(city) FROM Person_Address;
++-------------+
+| COUNT(city) |
++-------------+
+|           4 |
++-------------+
+1 row in set (0.00 sec)
+
+-- Sorting in descending order.
+
+mysql> SELECT DISTINCT Person_contacts.* FROM Person_contacts
+    -> INNER JOIN Person_Address ON Person_contacts.person_ID = Person_Address.person_ID
+    -> GROUP BY Person_contacts.person_ID
+    -> ORDER BY Person_Address.city DESC;
++-----------+-----------+----------+-------------+-------------------+
+| person_ID | firstName | lastName | PhoneNumber | Email             |
++-----------+-----------+----------+-------------+-------------------+
+|         3 | likth     | kumar    | 569874123   | likth@gmail.com   |
+|         1 | virat     | Reddy    | 9632587412  | virat@gmail.com   |
+|         2 | karin     | Guda     | 8521479632  | kall123@gmail.com |
++-----------+-----------+----------+-------------+-------------------+
+3 rows in set (0.00 sec)
+
+-- Ability to get number of contact persons i.e. count by type
+
+mysql> SELECT COUNT(p.Department_Type) AS ContactPerson FROM Person_Department AS p
+    -> INNER JOIN Person_contacts AS c ON c.person_ID = p.person_ID;
++---------------+
+| ContactPerson |
++---------------+
+|             4 |
++---------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COUNT(p.Department_Type) AS ContactPerson FROM Person_Department AS p
+    -> INNER JOIN Person_contacts AS c ON c.person_ID = p.person_ID
+    -> GROUP BY p.person_ID;
++---------------+
+| ContactPerson |
++---------------+
+|             1 |
+|             2 |
+|             1 |
++---------------+
+3 rows in set (0.00 sec)
