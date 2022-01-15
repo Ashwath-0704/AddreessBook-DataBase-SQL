@@ -207,3 +207,55 @@ mysql> SELECT * FROM Address_Book;
 | Anusha    | Mohan    | Sales Team      | kurnool near durga tmeple                                  | Kurnool   | AP        | 401562 |     7418503 | Anusha.123@gmail.com |
 +-----------+----------+-----------------+------------------------------------------------------------+-----------+-----------+--------+-------------+----------------------+
 5 rows in set (0.00 sec)
+
+-- Draw the ER Diagram for Address Book Service DB
+
+create table Person_Address (Address_ID int not null,person_ID int not null,Address varchar(255) not null,city varchar(100) not null,State varchar(100) not null,Zip_Code varchar(10) not null, primary key(Address_ID),
+foreign key (person_ID) references Person_contacts(person_ID));
+
+mysql> INSERT INTO Person_Address VALUES (1,1,'BTM layout','Bengaluru','Karnataka','560037'),(2,2,'KR Purm','Bengaluru','Karnataka','560056'),(3,3,'RT Nagar','Kurnool','Andhra pradash','875462'),(4,1,'JP Nagar','Bengaluru','Karnataka','560098');
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM Person_Address;
++------------+-----------+------------+-----------+----------------+----------+
+| Address_ID | person_ID | Address    | city      | State          | Zip_Code |
++------------+-----------+------------+-----------+----------------+----------+
+|          1 |         1 | BTM layout | Bengaluru | Karnataka      | 560037   |
+|          2 |         2 | KR Purm    | Bengaluru | Karnataka      | 560056   |
+|          3 |         3 | RT Nagar   | Kurnool   | Andhra pradash | 875462   |
+|          4 |         1 | JP Nagar   | Bengaluru | Karnataka      | 560098   |
++------------+-----------+------------+-----------+----------------+----------+
+4 rows in set (0.00 sec)
+
+create table Person_Contacts (person_ID int not null,firstName varchar(50) not null,lastName varchar(50) not null,PhoneNumber varchar(15) not null,Email varchar(30) not null, primary key(person_ID));
+
+mysql> SELECT * FROM Person_contacts;
++-----------+-----------+----------+-------------+-------------------+
+| person_ID | firstName | lastName | PhoneNumber | Email             |
++-----------+-----------+----------+-------------+-------------------+
+|         1 | virat     | Reddy    | 9632587412  | virat@gmail.com   |
+|         2 | karin     | Guda     | 8521479632  | kall123@gmail.com |
+|         3 | likth     | kumar    | 569874123   | likth@gmail.com   |
++-----------+-----------+----------+-------------+-------------------+
+3 rows in set (0.00 sec)
+
+
+create table Person_Department (Department_ID int not null,person_ID int not null,Department_Type varchar(30),primary key(Department_ID),
+foreign key (person_ID) references Person_contacts(person_ID)
+);
+
+mysql> INSERT INTO Person_Department VALUES (1,1,'Frined'),(2,2,'Family'),(3,3,'Profession'),(4,2,'Relative');
+Query OK, 4 rows affected (0.02 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM Person_Department;
++---------------+-----------+-----------------+
+| Department_ID | person_ID | Department_Type |
++---------------+-----------+-----------------+
+|             1 |         1 | Frined          |
+|             2 |         2 | Family          |
+|             3 |         3 | Profession      |
+|             4 |         2 | Relative        |
++---------------+-----------+-----------------+
+4 rows in set (0.00 sec)
